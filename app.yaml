@@ -1,0 +1,13 @@
+runtime: custom
+env: flex
+health_check:
+  enable_health_check: False
+threadsafe: true
+resources:
+  memory_gb: 32
+  cpu: 8
+automatic_scaling:
+  max_num_instances: 1
+env_variables:
+  GCS_PATH: "gs://ml-workshop/output/mnist_hptuning10"
+  RELOAD_INTERVAL: 1 
