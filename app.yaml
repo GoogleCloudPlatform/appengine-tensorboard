@@ -9,5 +9,6 @@ resources:
 automatic_scaling:
   max_num_instances: 1
 env_variables:
-  GCS_PATH: "gs://ml-workshop/output/mnist_hptuning10"
-  RELOAD_INTERVAL: 1 
+  EVENT_FILE_PATH: gs://ml-workshop/output/mnist_hptuning10
+  RELOAD_INTERVAL: 1
+  GCS_PROXY_CONFIG: gs://ml-workshop/oauth2_proxy.cfg
