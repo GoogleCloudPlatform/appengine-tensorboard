@@ -13,8 +13,8 @@
 # limitations under the License.
 FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install -y python3-pip curl
-RUN pip3 install tensorboard
+RUN apt-get update && apt-get install -y python-pip curl
+RUN pip install --upgrade tensorflow tensorboard
 
 # Install gsutil
 WORKDIR /var/gcloud
@@ -26,7 +26,6 @@ RUN echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 # Update the package list and install the Cloud SDK
 RUN  apt-get update && apt-get install -y google-cloud-sdk
-
 
 # Install oauth2_proxy
 WORKDIR /usr/local
